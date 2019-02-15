@@ -204,12 +204,8 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     This can be the `title`, `selectedTitle` or the `errorMessage`.
     The default implementation converts the text to uppercase.
     */
-    @objc open dynamic var titleFormatter: ((String) -> String) = { (text: String) -> String in
-        if #available(iOS 9.0, *) {
-            return text.localizedUppercase
-        } else {
-            return text.uppercased()
-        }
+    open var titleFormatter: ((String) -> String) = { (text: String) -> String in
+        return text;
     }
 
     /**
